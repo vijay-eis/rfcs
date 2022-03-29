@@ -18,12 +18,18 @@
 
 ## Detailed Explanation/Design
 
+### Terminology
+- Controlled Vocabulary
+- Backport
+
 ### In Scope Requirements/Use cases
 - Return localized messages (error/informational/validation) based on the value passed in the accept-language header
-- Controlled Vocabulary
+- Support for controlled vocabulary
+- Support for customizing translations per tenant
 - Process for backporting API/Backend messages similar to what we have for the front end 
 - Define naming convention to be used for keys
 - Define process for managing (decoupled from lokalise.com) translations
+- Return messages in en_US if the accept-language is empty/not supported/invalid
 
 ### Out of Scope Requirements/Use cases
 - Returning formatted (HTML/Markdown) messages
