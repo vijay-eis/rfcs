@@ -23,13 +23,21 @@
 - Backport
 
 ### In Scope Requirements/Use cases
-- Return localized messages (error/informational/validation) based on the value passed in the accept-language header
+- Return localized messages based on the value passed in the accept-language header
+- Handle
+  - application error messages
+  - validation messages
+  - informational messages
+  - system error messages
+  - Messages with dynamic content. For E.g Loan CANNOT be renewed more than {n} times
+  - 
 - Support for controlled vocabulary
 - Support for customizing translations per tenant
 - Process for backporting API/Backend messages similar to what we have for the front end 
 - Define naming convention to be used for keys
 - Define process for managing (decoupled from lokalise.com) translations
 - Return messages in en_US if the accept-language is empty/not supported/invalid
+- [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
 
 ### Out of Scope Requirements/Use cases
 - Returning formatted (HTML/Markdown) messages
@@ -112,4 +120,5 @@ When calling the back-end pass the required locale. The back-end maintains the t
 *Cons*
 
 ## Unresolved Questions
-- None
+- Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords) 
+  to break messages. Is it in scope ?
