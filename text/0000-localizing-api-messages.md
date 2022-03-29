@@ -11,7 +11,10 @@
 
 ## Motivation
 
-Why are we doing this? What use cases does it support? What is the expected outcome? What is the strategic value?
+- Help users understand the information coming from the application backend as they can relate to it  better when it is
+    in a language they understand
+- To allow FOLIO platform to be used by users across the world 
+- To create a tremendous opportunity for growth that we can never could have achieved within just one country.
 
 ## Detailed Explanation/Design
 
