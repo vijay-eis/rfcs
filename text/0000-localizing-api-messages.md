@@ -16,8 +16,19 @@ Why are we doing this? What use cases does it support? What is the expected outc
 ## Detailed Explanation/Design
 
 ### In Scope Requirements/Use cases
+- Return localized messages (error/informational/validation) based on the value passed in the accept-language header
+- Controlled Vocabulary
+- Process for backporting API/Backend messages similar to what we have for the front end 
+- Define naming convention to be used for keys
+- Define process for managing (decoupled from lokalise.com) translations
 
 ### Out of Scope Requirements/Use cases
+- Returning formatted (HTML/Markdown) messages
+
+### Design Notes
+- STOP using the lang parameter.
+- accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code, 
+  and CC is a two-letter country code.
 
 ## Risks and Drawbacks
 
@@ -92,7 +103,4 @@ When calling the back-end pass the required locale. The back-end maintains the t
 *Cons*
 
 ## Unresolved Questions
-
-Optional, but suggested for first drafts. What parts of the design are still TBD?
-
-What related issues do you consider out of scope for this RFC that could be addressed in the future independently of the solution that comes out of this RFC?
+- None
