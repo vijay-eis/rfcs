@@ -15,21 +15,9 @@ Why are we doing this? What use cases does it support? What is the expected outc
 
 ## Detailed Explanation/Design
 
-This is the bulk of the RFC. 
+### In Scope Requirements/Use cases
 
-Explain the proposal as though it were already implemented and you were teaching it to someone already familiar with Folio - foregoing unnecessary introductory material.
-
-* Get into the specifics including corner cases and plenty of examples.
-* Define any new terminology and named concepts
-* Fully explain the scope of the proposal: backend; frontend; full-stack.
-* Provide clear guidance as to how the proposal might be implemented.
-* Include any reference to any existing Folio Jira issues.
-* If appropriate, the use of diagrams and illustrations is encouraged.
-* Provide any assessment of the dependency impact of the proposed change; its interaction with other features is clear.
-* If possible describe how disruptive the change might be to the existing Folio development community.
-* Discuss how any breaking changes can be rolled out (migration guidance).
-* If applicable, provide sample code or pseudo-code,  error messages, or deprecation warnings
-* Describe the impact on existing Folio documentation, guides and other reference materials.
+### Out of Scope Requirements/Use cases
 
 ## Risks and Drawbacks
 
@@ -39,7 +27,9 @@ A genuine and thoughtful consideration to risks and drawbacks is essential for a
 
 ## Rationale and Alternatives
 
-Following options were considered
+Following options were considered. All options except Option 4 involves stripes in some manner.
+Coupling the API backend to a specific front end framework severely limits the usage of FOLIO API to
+only clients that are built using Stripes. 
 
 ### Option 1
 Distribute them over the existing front-end modules:
@@ -47,10 +37,10 @@ Distribute them over the existing front-end modules:
 ui-checkin with translation key ui-checkin.mod-circulation.itemNotFound
 ui-requests with translation key ui-requests.mod-circulation.patronHasItemOnLoad
 
-####Pros
+*Pros*
 - Uses existing front-end modules
 
-####Cons
+*Cons*
 - Cannot disable a front-end module for a tenant if it hosts a mod-circulation translation key that is needed by another enabled front-end module.
 
 ### Option 2a
@@ -61,10 +51,10 @@ For example create ui-mod-circulation module, and use translation keys
 ui-mod-circulation.itemNotFound
 ui-mod-circulation.patronHasItemOnLoad
 
-####Pros
+*Pros*
 - Any front-end module that uses mod-circulation can require ui-mod-circulation to load the translation files.
 - All mod-circulation translation strings go into a single module.
-####Cons
+*Cons*
 
 
 ### Option 2b
@@ -75,10 +65,10 @@ For example create i18n-circulation module, and use translation keys
 i18n-circulation.itemNotFound
 i18n-circulation.patronHasItemOnLoad
 
-####Pros
+*Pros*
 - Any front-end module that uses the circulation API can require i18n-circulation to load the translation files.
 - All circulation translation strings go into a single module.
-####Cons
+*Cons*
 
 ### Option 3
 The back-end module hosts the language files.
@@ -87,18 +77,19 @@ mod-circulation creates a translations/mod-circulation/ directory.
 
 Stripes fetches the translation files from the back-end module and can process them the same way as translation files from frone-end modules.
 
-####Pros
+*Pros*
 - Software and language files are in the same repository. Options 1 and 2 require to add the message string to some other repository using a second pull request.
 
-####Cons
+*Cons*
 - Is this technically feasible? How can Stripes fetch languages files from a non-Stripes module?
 
 ### Option 4:
 When calling the back-end pass the required locale. The back-end maintains the translations files, replaces the placeholders and puts the final string into the "message" property. A lang query parameter that many FOLIO API interfaces already have or an "accept-language" header line might be used.
 
-####Pros
+*Pros*
 - Java code and translation files live in the same repository. No work for the front-end.
 
+*Cons*
 
 ## Unresolved Questions
 
