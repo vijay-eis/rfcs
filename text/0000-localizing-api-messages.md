@@ -12,8 +12,7 @@ messages in the API response depending on the language preference set in the req
 
 ## Motivation
 
-- Help users understand the information coming from the application backend as they can relate to it  better when it is
-    in a language they understand
+- Help users understand the information coming from the application backend using a language they understand better
 - To allow FOLIO platform to be used by users across the world 
 - To create a tremendous opportunity for growth that we can never could have achieved within just one country.
 
@@ -42,6 +41,8 @@ messages in the API response depending on the language preference set in the req
 
 ### Out of Scope Requirements/Use cases
 - Returning formatted (HTML/Markdown) messages
+- Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords)to break messages
+
 
 ### Design Notes
 - STOP using the lang parameter.
@@ -121,5 +122,3 @@ When calling the back-end pass the required locale. The back-end maintains the t
 *Cons*
 
 ## Unresolved Questions
-- Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords) 
-  to break messages. Is it in scope ?
