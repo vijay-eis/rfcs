@@ -30,18 +30,16 @@ messages in the API response depending on the language preference set in the req
   - informational messages
   - system error messages
   - Messages with dynamic content. For E.g Loan CANNOT be renewed more than {n} times
-  - 
-- Support for controlled vocabulary
-- Support for customizing translations per tenant
-- Process for backporting API/Backend messages similar to what we have for the front end 
 - Define naming convention to be used for keys
-- Define process for managing (decoupled from lokalise.com) translations
-- Return messages in en_US if the accept-language is empty/not supported/invalid
 - [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
 
 ### Out of Scope Requirements/Use cases
+- Process for managing (decoupled from lokalise.com) translations
 - Returning formatted (HTML/Markdown) messages
 - Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords)to break messages
+- Support customization per tenant
+- Process for backporting API/Backend messages similar to what we have for the front end 
+- Support for controlled vocabulary (runtime data/)
 
 
 ### Design Notes
