@@ -25,11 +25,12 @@ messages in the API response depending on the language preference set in the req
 
 ### In Scope Requirements/Use cases
 - Return localized messages based on the value passed in the accept-language header
-- Handle
-  - application error messages
-  - validation messages
-  - informational messages
-  - system error messages
+- Handle static messages and static messages with placeholders
+- Message categories
+  - application
+  - validation
+  - informational
+  - system error
 - Define naming convention to be used for keys
 - [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
 - Runtime values that are to be localized (E.g. Patron Groups) 
