@@ -26,28 +26,23 @@ messages in the API response depending on the language preference set in the req
 ### In Scope Requirements/Use cases
 - Return localized messages based on the value passed in the accept-language header
 - Handle static messages and static messages with placeholders
-- Message categories
-  - application
-  - validation
-  - informational
-  - system error
-- Define naming convention to be used for keys
-- [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
-- Runtime values that are to be localized (E.g. Patron Groups) 
 
 ### Out of Scope Requirements/Use cases
+- [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
+- Naming convention to be used for keys
 - Process for managing (decoupled from lokalise.com) translations
 - Returning formatted (HTML/Markdown) messages
 - Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords)to break messages
 - Support customization per tenant
 - Process for backporting API/Backend messages similar to what we have for the front end 
-- Support for controlled vocabulary (runtime data/)
+- Support for controlled vocabulary (runtime data/data coming from DB tables. E.g. Patron Groups for tenants)
 
 
 ### Design Notes
 - STOP using the lang parameter.
 - accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code, 
   and CC is a two-letter country code.
+- When accept-language header is missing or has an incorrect value, return the message in en_US
 
 ## Risks and Drawbacks
 
