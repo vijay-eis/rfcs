@@ -19,8 +19,8 @@ messages in the API response depending on the language preference set in the req
 ## Detailed Explanation/Design
 
 ### Terminology
-- Static Message - This is something you need translate
-- Static Message with placeholder - You can ONLY renew {n} times
+- Static Message - E.g. _This is something you need translate_
+- Static Message with placeholder - _You can ONLY renew {n} times_
  
 
 ### In Scope Requirements/Use cases
