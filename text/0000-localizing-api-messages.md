@@ -17,6 +17,15 @@ messages in the API response depending on the language preference set in the req
 - To create a tremendous opportunity for growth that we can never could have achieved within just one country.
 
 ## Detailed Explanation/Design
+- Locale specific translations MUST be stored in a properties file
+- Properties file naming convention 
+  - default locale (en_US) - somename.properties
+  - specific locale - somename_fr.properties (For french),  somename_de.properties (For german)
+- Properties file MUST BE loaded using the classpath. AVOID using file locations
+- Properties file entries WILL use the standard key value pair format
+- When using application frameworks (spring, vertx, etc.) implement localization using the framework specific implementation (if there is one)
+- When handling messages with placeholders, replace the placeholders with the actual value on the server side before 
+  sending it back to the client
 
 ### Terminology
 - Static Message - E.g. _This is something you need translate_
@@ -122,3 +131,4 @@ When calling the back-end pass the required locale. The back-end maintains the t
 *Cons*
 
 ## Unresolved Questions
+- How do we allow tenants to change default locale ?
