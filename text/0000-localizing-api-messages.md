@@ -60,10 +60,10 @@ Why should we not do this?
 A genuine and thoughtful consideration to risks and drawbacks is essential for a well-rounded proposal. 
 
 ## Rationale and Alternatives
-
-**_Following 4 options were considered. All options except Option 4 involves stripes in some manner.
+<span style="color:green">**_Following 4 options were considered. All options except Option 4 involves stripes in some manner.
 Coupling the API backend to a specific front end framework limits the usage of FOLIO API to
 only clients that are built using Stripes._**
+</span>.
 
 ### Option 1
 Distribute them over the existing front-end modules:
