@@ -45,8 +45,6 @@ messages in the API response depending on the language preference set in the req
 - When using application frameworks (spring, vertx, etc.) implement localization using the framework specific implementation (if there is one)
 - When handling messages with placeholders, replace the placeholders with the actual value on the server side before
   sending it back to the client
-
-### Design Notes
 - STOP using the lang parameter.
 - accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code, 
   and CC is a two-letter country code.
