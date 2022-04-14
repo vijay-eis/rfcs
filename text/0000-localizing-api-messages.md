@@ -25,7 +25,7 @@ messages in the API response depending on the language preference set in the req
 
 ### In Scope Requirements/Use cases
 - Return localized messages based on the value passed in the accept-language header
-- Handle static messages and static messages with placeholders
+- Handle static messages, static messages with placeholders and JSON error response
 
 ### Out of Scope Requirements/Use cases
 - [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
@@ -52,9 +52,9 @@ A genuine and thoughtful consideration to risks and drawbacks is essential for a
 
 ## Rationale and Alternatives
 
-Following options were considered. All options except Option 4 involves stripes in some manner.
-Coupling the API backend to a specific front end framework severely limits the usage of FOLIO API to
-only clients that are built using Stripes. 
+**_Following 4 options were considered. All options except Option 4 involves stripes in some manner.
+Coupling the API backend to a specific front end framework limits the usage of FOLIO API to
+only clients that are built using Stripes._**
 
 ### Option 1
 Distribute them over the existing front-end modules:
@@ -67,6 +67,7 @@ ui-requests with translation key ui-requests.mod-circulation.patronHasItemOnLoad
 
 *Cons*
 - Cannot disable a front-end module for a tenant if it hosts a mod-circulation translation key that is needed by another enabled front-end module.
+- Not all originating messages can be mapped to a frontend module 
 
 ### Option 2a
 For each back-end module with translation keys create a dedicated front-end module with language files:
@@ -80,7 +81,8 @@ ui-mod-circulation.patronHasItemOnLoad
 - Any front-end module that uses mod-circulation can require ui-mod-circulation to load the translation files.
 - All mod-circulation translation strings go into a single module.
 *Cons*
-
+- Additional overhead in managing more ui modules
+- Not all originating messages can be mapped to a frontend module
 
 ### Option 2b
 For each back-end interface with translation keys create a dedicated front-end module with language files:
@@ -94,6 +96,8 @@ i18n-circulation.patronHasItemOnLoad
 - Any front-end module that uses the circulation API can require i18n-circulation to load the translation files.
 - All circulation translation strings go into a single module.
 *Cons*
+- Additional overhead in managing more ui modules
+- Not all originating messages can be mapped to a frontend module
 
 ### Option 3
 The back-end module hosts the language files.
@@ -113,6 +117,7 @@ When calling the back-end pass the required locale. The back-end maintains the t
 
 *Pros*
 - Java code and translation files live in the same repository. No work for the front-end.
+- This is a well known pattern in the Java community
 
 *Cons*
 
