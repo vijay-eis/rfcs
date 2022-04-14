@@ -2,6 +2,9 @@
 - Start Date: 03-29-2022
 - RFC PR: 
 - FOLIO Issue: 
+- Submitter : Radhakrishnan Gopalakrishnan (rgopalakrishnan@ebsco.com)
+- Co-Submitter(s) : Zak Burke (zburke@ebsco.com)
+- Sub Group :
 
 # Localizing API (Backend) Messages
 
