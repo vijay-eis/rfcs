@@ -16,17 +16,6 @@ messages in the API response depending on the language preference set in the req
 - To allow FOLIO platform to be used by users across the world 
 - To create a tremendous opportunity for growth that we can never could have achieved within just one country.
 
-## Detailed Explanation/Design
-- Locale specific translations MUST be stored in a properties file
-- Properties file naming convention 
-  - default locale (en_US) - somename.properties
-  - specific locale - somename_fr.properties (For french),  somename_de.properties (For german)
-- Properties file MUST BE loaded using the classpath. AVOID using file locations
-- Properties file entries WILL use the standard key value pair format
-- When using application frameworks (spring, vertx, etc.) implement localization using the framework specific implementation (if there is one)
-- When handling messages with placeholders, replace the placeholders with the actual value on the server side before 
-  sending it back to the client
-
 ### Terminology
 - Static Message - E.g. _This is something you need translate_
 - Static Message with placeholder - _You can ONLY renew {n} times_
@@ -34,7 +23,7 @@ messages in the API response depending on the language preference set in the req
 
 ### In Scope Requirements/Use cases
 - Return localized messages based on the value passed in the accept-language header
-- Handle static messages, static messages with placeholders and JSON error response
+- Handle static messages, static messages with placeholders
 
 ### Out of Scope Requirements/Use cases
 - [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
@@ -43,9 +32,19 @@ messages in the API response depending on the language preference set in the req
 - Returning formatted (HTML/Markdown) messages
 - Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords)to break messages
 - Support customization per tenant
-- Process for backporting API/Backend messages similar to what we have for the front end 
+- Process for back porting API/Backend messages similar to what we have for the front end 
 - Support for controlled vocabulary (runtime data/data coming from DB tables. E.g. Patron Groups for tenants)
 
+## Detailed Explanation/Design
+- Locale specific translations MUST be stored in a properties file
+- Properties file naming convention
+  - default locale (en_US) - somename.properties
+  - specific locale - somename_fr.properties (For french),  somename_de.properties (For german)
+- Properties file MUST BE loaded using the classpath. AVOID using file locations
+- Properties file entries WILL use the standard key value pair format
+- When using application frameworks (spring, vertx, etc.) implement localization using the framework specific implementation (if there is one)
+- When handling messages with placeholders, replace the placeholders with the actual value on the server side before
+  sending it back to the client
 
 ### Design Notes
 - STOP using the lang parameter.
