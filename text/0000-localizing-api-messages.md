@@ -124,12 +124,11 @@ When calling the back-end pass the required locale. The back-end maintains the t
 - This is a well known pattern in the Java community
 
 *Cons*
+- None
 
 ## Risks and Drawbacks
 
-Why should we not do this? 
-
-A genuine and thoughtful consideration to risks and drawbacks is essential for a well-rounded proposal. 
+None that we can think of. The pattern we are adopting is a standard pattern in the java community
 
 
 ## Unresolved Questions
