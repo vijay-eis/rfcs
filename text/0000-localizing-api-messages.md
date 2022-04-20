@@ -33,7 +33,7 @@ messages in the API response depending on the language preference set in the req
 - Naming convention to be used for keys
 - Process for managing (decoupled from lokalise.com) translations
 - Returning formatted (HTML/Markdown) messages
-- Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords)to break messages
+- Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords) to break messages
 - Support customization per tenant
 - Process for back porting API/Backend messages similar to what we have for the front end 
 - Support for controlled vocabulary (runtime data/data coming from DB tables. E.g. Patron Groups for tenants)
