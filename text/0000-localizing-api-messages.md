@@ -53,11 +53,6 @@ messages in the API response depending on the language preference set in the req
   and CC is a two-letter country code.
 - When accept-language header is missing or has an incorrect value, return the message in en_US (or the default locale configured)
 
-## Risks and Drawbacks
-
-Why should we not do this? 
-
-A genuine and thoughtful consideration to risks and drawbacks is essential for a well-rounded proposal. 
 
 ## Rationale and Alternatives
 <span style="color:green">**_Following 4 options were considered. All options except Option 4 involves stripes in some manner.
@@ -129,6 +124,13 @@ When calling the back-end pass the required locale. The back-end maintains the t
 - This is a well known pattern in the Java community
 
 *Cons*
+
+## Risks and Drawbacks
+
+Why should we not do this? 
+
+A genuine and thoughtful consideration to risks and drawbacks is essential for a well-rounded proposal. 
+
 
 ## Unresolved Questions
 - How do we allow tenants to change default locale ?
