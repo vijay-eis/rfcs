@@ -57,7 +57,7 @@ messages in the API response depending on the language preference set in the req
 ## Rationale and Alternatives
 <span style="color:green">**_Following 4 options were considered. All options except Option 4 involves stripes in some manner.
 Coupling the API backend to a specific front end framework limits the usage of FOLIO API to
-only clients that are built using Stripes._**
+only clients that are built using Stripes. As a result, we are recommending that we go with Option 4._**
 </span>.
 
 ### Option 1
