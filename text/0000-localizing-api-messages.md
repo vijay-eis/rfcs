@@ -36,7 +36,7 @@ messages in the API response depending on the language preference set in the req
 - Usage of [soft hyphen](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Softhyphentobreakwords) to break messages
 - Support customization per tenant
 - Process  for [back porting](https://wiki.folio.org/display/I18N/Backport) API/Backend messages similar to what we have for the front end 
-- Support for controlled vocabulary (runtime data/data coming from DB tables. E.g. Patron Groups for tenants)
+- Support for [controlled vocabulary](https://issues.folio.org/browse/UXPROD-3148) (runtime data/data coming from DB tables. E.g. Patron Groups for tenants)
 
 ## Detailed Explanation/Design
 - Locale specific translations MUST be stored in a properties file
