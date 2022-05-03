@@ -19,14 +19,9 @@ messages in the API response depending on the language preference set in the req
 - To allow FOLIO platform to be used by users across the world 
 - To create a tremendous opportunity for growth that we can never could have achieved within just one country.
 
-### Terminology
-- Static Message - E.g. _This is something you need translate_
-- Static Message with placeholder - _You can ONLY renew {n} times_
- 
-
 ### In Scope Requirements/Use cases
 - Return localized messages based on the value passed in the accept-language header
-- Handle static messages, static messages with placeholders
+- Handle static messages with placeholder(s)
 
 ### Out of Scope Requirements/Use cases
 - [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
