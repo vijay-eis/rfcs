@@ -41,7 +41,8 @@ messages in the API response depending on the language preference set in the req
 * Translation file format will depend on the language that is used to develop the module
   * Java, Groovy - properties
   * JavaScript, nodejs - json
-* Translation files MUST be placed under translations/<Backend Module Name>
+  * Any other language - Please contact Technical Council for further guidance
+* Translation files MUST be placed under translations/\<Backend Module Name\>
 * Translation message keys MUST be a string (alphanumeric characters ONLY)
 * When handling messages with placeholders, replace the placeholders with the actual value on the server side before
   sending it back to the client
