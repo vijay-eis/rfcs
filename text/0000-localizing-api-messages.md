@@ -143,8 +143,9 @@ None that we can think of. The pattern we are adopting is a standard pattern in 
 
 
 ## Unresolved Questions
-- Use of ICU for standardizing messages value format in translation files
+- Use of ICU for standardizing messages value format in translation files. Impact analysis if were not 
+  to adopt ICU standard
 - Tradeoffs 
 - Can the localization project support translating files that are in different formats. 
-  JSON, properties file etc..
+  JSON, properties file etc.
 - Terminology Section 
