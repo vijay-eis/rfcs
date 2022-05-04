@@ -3,7 +3,7 @@
 * RFC PR: 
   * https://github.com/folio-org/rfcs/pull/3
 * FOLIO Issue:
-* Current Status: PRELIMINARY REVIEW --> **DRAFT REVIEW** --> PUBLIC REVIEW --> FINAL REVIEW
+* Current Status: :no_entry_sign: DRAFT REVIEW :no_entry_sign:
 * Submitter : Radhakrishnan Gopalakrishnan (rgopalakrishnan@ebsco.com)
 * Co-Submitter(s) : Zak Burke (zburke@ebsco.com)
 * Sub Group : 
