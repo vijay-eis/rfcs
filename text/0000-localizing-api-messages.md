@@ -1,10 +1,14 @@
 
-- Start Date: 2022-03-29
-- RFC PR: 
-- FOLIO Issue: 
-- Submitter : Radhakrishnan Gopalakrishnan (rgopalakrishnan@ebsco.com)
-- Co-Submitter(s) : Zak Burke (zburke@ebsco.com)
-- Sub Group :
+* Start Date: 2022-03-29
+* RFC PR: 
+* FOLIO Issue: 
+* Submitter : Radhakrishnan Gopalakrishnan (rgopalakrishnan@ebsco.com)
+* Co-Submitter(s) : Zak Burke (zburke@ebsco.com)
+* Sub Group : 
+  * Marc Johnson (marc.johnson@k-int.com)
+  * Julian Ladisch (julian.ladisch@gbv.de)
+  * Peter Murray (peter@indexdata.com)
+  * Tod Olson (tod@uchicago.edu)
 
 # Localizing API (Backend) Messages
 
@@ -34,19 +38,18 @@ messages in the API response depending on the language preference set in the req
 - Support for [controlled vocabulary](https://issues.folio.org/browse/UXPROD-3148) (runtime data/data coming from DB tables. E.g. Patron Groups for tenants)
 
 ## Detailed Explanation/Design
-- Locale specific translations MUST be stored in a properties file
-- Properties file naming convention
-  - default locale (en_US) - somename.properties
-  - specific locale - somename_fr.properties (For french),  somename_de.properties (For german)
-- Properties file MUST BE loaded using the classpath. AVOID using file locations
-- Properties file entries WILL use the standard key value pair format
-- When using application frameworks (spring, vertx, etc.) implement localization using the framework specific implementation (if there is one)
-- When handling messages with placeholders, replace the placeholders with the actual value on the server side before
+* Translation file format will depend on the language that is used to develop the module
+  * Java, Groovy - properties
+  * JavaScript, nodejs - json
+* Translation files MUST be placed under translations/<Backend Module Name>
+* Translation message keys MUST be a string (alphanumeric characters ONLY)
+* When handling messages with placeholders, replace the placeholders with the actual value on the server side before
   sending it back to the client
-- STOP using the lang parameter.
-- accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code, 
+* STOP using the lang query string parameter.
+* accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code, 
   and CC is a two-letter country code.
-- When accept-language header is missing or has an incorrect value, return the message in en_US (or the default locale configured)
+* When accept-language header is missing or has an incorrect value, return the message value in en_US. If message value 
+  cannot be found, return the message key
 
 
 ## Rationale and Alternatives
@@ -127,4 +130,7 @@ None that we can think of. The pattern we are adopting is a standard pattern in 
 
 
 ## Unresolved Questions
-- How do we allow tenants to change default locale ?
+- Use of ICU for standardizing messages value format in translation files
+- Tradeoffs 
+- Can the localization project support translating files that are in different formats. 
+  JSON, properties file etc..
