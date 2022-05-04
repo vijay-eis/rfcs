@@ -1,7 +1,9 @@
 
 * Start Date: 2022-03-29
 * RFC PR: 
-* FOLIO Issue: 
+  * https://github.com/folio-org/rfcs/pull/3
+* FOLIO Issue:
+* Current Status: PRELIMINARY REVIEW --> **DRAFT REVIEW** --> PUBLIC REVIEW --> FINAL REVIEW
 * Submitter : Radhakrishnan Gopalakrishnan (rgopalakrishnan@ebsco.com)
 * Co-Submitter(s) : Zak Burke (zburke@ebsco.com)
 * Sub Group : 
