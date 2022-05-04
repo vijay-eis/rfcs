@@ -24,6 +24,15 @@ messages in the API response depending on the language preference set in the req
 - To create a tremendous opportunity for growth that we can never could have achieved within just one country.
 - To Promote consistency and make it easier for tools and translators when handling translation files
 
+### Terminology
+* Controlled Vocabulary - ???
+* Message Key - Refers to the string that is used in place of a hardcoded message in the code
+* Message Value - Refers to the string that is fetched using a message key lookup for a given locale
+* Translation file - Contains Message key and values for a given locale
+* Static Messages - Refers to the messages values stored in the translation file
+* Dynamic Messages - ???
+* Message Format - Refers to the standard used for formatting the message values in the translation file
+
 ### In Scope Requirements/Use cases
 - Return localized messages based on the value passed in the accept-language header
 - Handle static messages with placeholder(s)
@@ -138,3 +147,4 @@ None that we can think of. The pattern we are adopting is a standard pattern in 
 - Tradeoffs 
 - Can the localization project support translating files that are in different formats. 
   JSON, properties file etc..
+- Terminology Section 
