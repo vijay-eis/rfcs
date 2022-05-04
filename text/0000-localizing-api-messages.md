@@ -43,7 +43,9 @@ messages in the API response depending on the language preference set in the req
   * JavaScript, nodejs - json
   * Any other language - Please contact Technical Council for further guidance
 * Translation files MUST be placed under translations/\<Backend Module Name\>
+* Translation file name should be ll_CC.ext. Here ‘ll’ is an ISO 639 two-letter language code, and ‘CC’ is an ISO 3166 two-letter country code.
 * Translation message keys MUST be a string (alphanumeric characters ONLY)
+* Developer should follow language/framework specific recommended best practices for loading translation at runtime
 * When handling messages with placeholders, replace the placeholders with the actual value on the server side before
   sending it back to the client
 * STOP using the lang query string parameter.
