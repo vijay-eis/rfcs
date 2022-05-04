@@ -43,7 +43,7 @@ messages in the API response depending on the language preference set in the req
   * Java, Groovy - properties
   * JavaScript, nodejs - json
   * Any other language - Please contact Technical Council for further guidance
-* Translation files MUST be placed under translations/\<Backend Module Name\>
+* Translation files MUST be placed under translations/\<Backend Module Name\>, relative to the root of the repo
 * Translation file name should be ll_CC.ext. Here ‘ll’ is an ISO 639 two-letter language code, and ‘CC’ is an ISO 3166 two-letter country code.
 * Translation message keys MUST be a string (alphanumeric characters ONLY)
 * Developer should follow language/framework specific recommended best practices for loading translation at runtime
