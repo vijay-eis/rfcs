@@ -22,6 +22,7 @@ messages in the API response depending on the language preference set in the req
 - Help users understand the information coming from the application backend using a language they understand better
 - To allow FOLIO platform to be used by users across the world 
 - To create a tremendous opportunity for growth that we can never could have achieved within just one country.
+- To Promote consistency and make it easier for tools and translators when handling translation files
 
 ### In Scope Requirements/Use cases
 - Return localized messages based on the value passed in the accept-language header
