@@ -31,6 +31,7 @@ messages in the API response depending on the language preference set in the req
 
 ### Terminology
 * Controlled Vocabulary - ???
+* Base Language - Language on which all other translations are based.
 * Message Key - Refers to the string that is used in place of a hardcoded message in the code
 * Message Value - Refers to the string that is fetched using a message key lookup for a given locale
 * Translation file - Contains Message key and values for a given locale
@@ -63,11 +64,13 @@ messages in the API response depending on the language preference set in the req
 * Developer should follow language/framework specific recommended best practices for loading translation at runtime
 * When handling messages with placeholders, replace the placeholders with the actual value on the server side before
   sending it back to the client
-* STOP using the lang query string parameter.
+* Reliance on the lang query string parameter is DEPRECATED and SHOULD be updated to use the "Accept-language" header 
+  at the earliest possible development sprint.
 * accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code, 
   and CC is a two-letter country code.
-* When accept-language header is missing or has an incorrect value, return the message value in en_US. If message value 
-  cannot be found, return the message key
+* A module MUST return messages in the language specified in the HTTP "Accept-language" request header
+  (see IETF RFC 7231 section 5.3.5).  If the requested language is not available, a module 
+  MUST return the message in the en language.
 
 
 ## Rationale and Alternatives
