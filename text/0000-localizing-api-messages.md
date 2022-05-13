@@ -36,7 +36,7 @@ messages in the API response depending on the language preference set in the req
 * Message Value - Refers to the string that is fetched using a message key lookup for a given locale
 * Translation file - Contains Message key and values for a given locale
 * Static Messages - Refers to the messages values stored in the translation file
-* Dynamic Messages - ???
+* Dynamic Messages - Messages stored in the database that requires translation 
 * Message Format - Refers to the standard used for formatting the message values in the translation file
 
 ### In Scope Requirements/Use cases
@@ -70,13 +70,15 @@ messages in the API response depending on the language preference set in the req
   * JavaScript, nodejs - json
   * Any other language - Please contact Technical Council for further guidance
 * Translation files MUST be placed under translations/\<Backend Module Name\>, relative to the root of the repo
-* Translation file name should be ll_CC.ext. Here ‘ll’ is an ISO 639 two-letter language code, 
-   and ‘CC’ is an ISO 3166 two-letter country code.
+* Translation file name SHOULD be [language code]_[country code].[extension] 
+  where `language code` is an ISO 639 two-letter language code, `country code` is an ISO 3166 two-letter country code 
+  and `extension` is the appropriate extension for the file format. For example, in `ll_CC.json`, 
+  ‘ll’ is the language code, ‘CC’ country code and `json` is the extension
 #### Translations
 * Translation message keys MUST be a string (alphanumeric characters ONLY)
 * Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard
 #### Language/Runtime
-* Developer should follow language/framework specific recommended best practices for loading translation at runtime
+* Module SHOULD use language/framework specific recommended best practices for loading translation at runtime
 
 
 
