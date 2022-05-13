@@ -44,7 +44,6 @@ messages in the API response depending on the language preference set in the req
 - Handle static messages with placeholder(s)
 
 ### Out of Scope Requirements/Use cases
-- [Plural Syntax](https://wiki.folio.org/display/I18N/How+To+translate+FOLIO#HowTotranslateFOLIO-Pluralsyntax)
 - Naming convention to be used for keys
 - Process for managing (decoupled from lokalise.com) translations
 - Returning formatted (HTML/Markdown) messages
@@ -71,6 +70,7 @@ messages in the API response depending on the language preference set in the req
 * A module MUST return messages in the language specified in the HTTP "Accept-language" request header
   (see IETF RFC 7231 section 5.3.5).  If the requested language is not available, a module 
   MUST return the message in the en language.
+* Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard 
 
 
 ## Rationale and Alternatives
