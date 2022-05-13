@@ -53,24 +53,31 @@ messages in the API response depending on the language preference set in the req
 - Support for [controlled vocabulary](https://issues.folio.org/browse/UXPROD-3148) (runtime data/data coming from DB tables. E.g. Patron Groups for tenants)
 
 ## Detailed Explanation/Design
+#### API Protocol
+* accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code,
+  and CC is a two-letter country code.
+* A module MUST return messages in the language specified in the HTTP "Accept-language" request header
+  (see IETF RFC 7231 section 5.3.5).  If the requested language is not available, a module
+  MUST return the message in the en language.
+* When handling messages with placeholders, replace the placeholders with the actual value on the server side before
+    sending it back to the client
+* Reliance on the lang query string parameter is DEPRECATED and SHOULD be updated to use the "Accept-language" header
+  at the earliest possible development sprint.
+
+#### Translation files
 * Translation file format will depend on the language that is used to develop the module
   * Java, Groovy - properties
   * JavaScript, nodejs - json
   * Any other language - Please contact Technical Council for further guidance
 * Translation files MUST be placed under translations/\<Backend Module Name\>, relative to the root of the repo
-* Translation file name should be ll_CC.ext. Here ‘ll’ is an ISO 639 two-letter language code, and ‘CC’ is an ISO 3166 two-letter country code.
+* Translation file name should be ll_CC.ext. Here ‘ll’ is an ISO 639 two-letter language code, 
+   and ‘CC’ is an ISO 3166 two-letter country code.
+#### Translations
 * Translation message keys MUST be a string (alphanumeric characters ONLY)
+* Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard
+#### Language/Runtime
 * Developer should follow language/framework specific recommended best practices for loading translation at runtime
-* When handling messages with placeholders, replace the placeholders with the actual value on the server side before
-  sending it back to the client
-* Reliance on the lang query string parameter is DEPRECATED and SHOULD be updated to use the "Accept-language" header 
-  at the earliest possible development sprint.
-* accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code, 
-  and CC is a two-letter country code.
-* A module MUST return messages in the language specified in the HTTP "Accept-language" request header
-  (see IETF RFC 7231 section 5.3.5).  If the requested language is not available, a module 
-  MUST return the message in the en language.
-* Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard 
+
 
 
 ## Rationale and Alternatives
