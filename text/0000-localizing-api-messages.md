@@ -157,3 +157,5 @@ None that we can think of. The pattern we are adopting is a standard pattern in 
 - Can the localization project support translating files that are in different formats. 
   JSON, properties file etc.
 - Terminology Section 
+- Using - vs. _ in the translation file name
+- Translation file location
