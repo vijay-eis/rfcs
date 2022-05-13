@@ -30,13 +30,12 @@ messages in the API response depending on the language preference set in the req
 - To Promote consistency and make it easier for tools and translators when handling translation files
 
 ### Terminology
-* Controlled Vocabulary - ???
 * Base Language - Language on which all other translations are based.
 * Message Key - Refers to the string that is used in place of a hardcoded message in the code
 * Message Value - Refers to the string that is fetched using a message key lookup for a given locale
 * Translation file - Contains Message key and values for a given locale
 * Static Messages - Refers to the messages values stored in the translation file
-* Dynamic Messages - Messages stored in the database that requires translation 
+* Dynamic Messages - Messages stored in the database that requires translation. A.k.a Runtime messages
 * Message Format - Refers to the standard used for formatting the message values in the translation file
 
 ### In Scope Requirements/Use cases
@@ -69,13 +68,15 @@ messages in the API response depending on the language preference set in the req
   * Java, Groovy - properties
   * JavaScript, nodejs - json
   * Any other language - Please contact Technical Council for further guidance
-* Translation files MUST be placed under translations/\<Backend Module Name\>, relative to the root of the repo
-* Translation file name SHOULD be [language code]_[country code].[extension] 
+* Translation files MUST be placed under translations/\<Backend Module Name\>, relative to the root of the repo.
+  The files are being stored under a folder named after the module/repo to avoid having conflicts when using the same
+  message key across multiple backend modules. 
+* Translation file name MUST be [language code]_[country code].[extension] 
   where `language code` is an ISO 639 two-letter language code, `country code` is an ISO 3166 two-letter country code 
-  and `extension` is the appropriate extension for the file format. For example, in `ll_CC.json`, 
+  and `extension` is the appropriate extension for the file format. For example, in `ll-CC.json`, 
   ‘ll’ is the language code, ‘CC’ country code and `json` is the extension
 #### Translations
-* Translation message keys MUST be a string (alphanumeric characters ONLY)
+* Translation message keys MUST be a valid string 
 * Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard
 #### Language/Runtime
 * Module SHOULD use language/framework specific recommended best practices for loading translation at runtime
@@ -152,7 +153,7 @@ When calling the back-end pass the required locale. The back-end maintains the t
 - This is a well known pattern in the Java community
 
 *Cons*
-- None
+- We are essentially dealing with translations in multiple locations. Frontend and Backend
 
 ## Risks and Drawbacks
 
@@ -160,11 +161,4 @@ None that we can think of. The pattern we are adopting is a standard pattern in 
 
 
 ## Unresolved Questions
-- Use of ICU for standardizing messages value format in translation files. Impact analysis if were not 
-  to adopt ICU standard
-- Tradeoffs 
-- Can the localization project support translating files that are in different formats. 
-  JSON, properties file etc.
-- Terminology Section 
-- Using - vs. _ in the translation file name
-- Translation file location
+
