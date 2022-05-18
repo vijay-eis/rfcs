@@ -53,7 +53,7 @@ messages in the API response depending on the language preference set in the req
 
 ## Detailed Explanation/Design
 #### API Protocol
-* accept-language header value MUST be in ll_CC format. , where ll is a two-letter language code,
+* accept-language header value MUST be in ll-CC format. , where ll is a two-letter language code,
   and CC is a two-letter country code.
 * A module MUST return messages in the language specified in the HTTP "Accept-language" request header
   (see IETF RFC 7231 section 5.3.5).  If the requested language is not available, a module
