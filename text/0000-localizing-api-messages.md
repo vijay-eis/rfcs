@@ -2,7 +2,7 @@
 * Start Date: 2022-03-29
 * RFC PR: 
   * Preliminary Review: https://github.com/folio-org/rfcs/pull/3
-  * Draft Review :
+  * Draft Review : https://github.com/folio-org/rfcs/pull/3
   * Public Review :
   * Final Review :
 * FOLIO Issue:
