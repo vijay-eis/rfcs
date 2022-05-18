@@ -71,7 +71,7 @@ messages in the API response depending on the language preference set in the req
 * Translation files MUST be placed under translations/\<Backend Module Name\>, relative to the root of the repo.
   The files are being stored under a folder named after the module/repo to avoid having conflicts when using the same
   message key across multiple backend modules. 
-* Translation file name MUST be [language code]_[country code].[extension] 
+* Translation file name MUST be [language code]-[country code].[extension] 
   where `language code` is an ISO 639 two-letter language code, `country code` is an ISO 3166 two-letter country code 
   and `extension` is the appropriate extension for the file format. For example, in `ll-CC.json`, 
   ‘ll’ is the language code, ‘CC’ country code and `json` is the extension
