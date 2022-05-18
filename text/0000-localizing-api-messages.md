@@ -54,7 +54,8 @@ messages in the API response depending on the language preference set in the req
 ## Detailed Explanation/Design
 #### API Protocol
 * accept-language header value MUST be in ll-CC format. , where ll is a two-letter language code,
-  and CC is a two-letter country code.
+  and CC is a two-letter country code. Refer to [IETF Language Tag standard](https://en.wikipedia.org/wiki/IETF_language_tag)
+  for additional details
 * A module MUST return messages in the language specified in the HTTP "Accept-language" request header
   (see IETF RFC 7231 section 5.3.5).  If the requested language is not available, a module
   MUST return the message in the en language.
@@ -71,10 +72,9 @@ messages in the API response depending on the language preference set in the req
 * Translation files MUST be placed under translations/\<Backend Module Name\>, relative to the root of the repo.
   The files are being stored under a folder named after the module/repo to avoid having conflicts when using the same
   message key across multiple backend modules. 
-* Translation file name MUST be [language code]-[country code].[extension] 
-  where `language code` is an ISO 639 two-letter language code, `country code` is an ISO 3166 two-letter country code 
-  and `extension` is the appropriate extension for the file format. For example, in `ll-CC.json`, 
-  ‘ll’ is the language code, ‘CC’ country code and `json` is the extension
+* Translation file name MUST be named [language code]-[country code].[extension] 
+  The language code and country code MUST adhere to  [IETF Language Tag standard](https://en.wikipedia.org/wiki/IETF_language_tag)  
+  and `extension` is the appropriate extension for the file format.
 #### Translations
 * Translation message keys MUST be a valid string 
 * Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard
