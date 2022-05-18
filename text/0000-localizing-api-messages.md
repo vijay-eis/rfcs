@@ -60,7 +60,7 @@ messages in the API response depending on the language preference set in the req
   MUST return the message in the en language.
 * When handling messages with placeholders, replace the placeholders with the actual value on the server side before
     sending it back to the client
-* Reliance on the lang query string parameter is DEPRECATED and SHOULD be updated to use the "Accept-language" header
+* Reliance on the lang query string parameter is DEPRECATED and MUST be updated to use the "Accept-language" header
   at the earliest possible development sprint.
 
 #### Translation files
@@ -79,7 +79,7 @@ messages in the API response depending on the language preference set in the req
 * Translation message keys MUST be a valid string 
 * Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard
 #### Language/Runtime
-* Module SHOULD use language/framework specific recommended best practices for loading translation at runtime
+* Module MUST use language/framework specific recommended best practices for loading translation at runtime
 
 
 
