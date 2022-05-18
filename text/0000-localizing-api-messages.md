@@ -157,7 +157,7 @@ When calling the back-end pass the required locale. The back-end maintains the t
 
 ## Risks and Drawbacks
 
-None that we can think of. The pattern we are adopting is a standard pattern in the java community
+- Translation files are spread over multiple repositories
 
 
 ## Unresolved Questions
