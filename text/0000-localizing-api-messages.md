@@ -77,7 +77,7 @@ messages in the API response depending on the language preference set in the req
   and `extension` is the appropriate extension for the file format.
 #### Translations
 * Translation message keys MUST be a valid string 
-* Message Values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard
+* Message values in the translation file MUST be formatted according to the [ICU](https://icu.unicode.org)  standard
 #### Language/Runtime
 * Module MUST use language/framework specific recommended best practices for loading translation at runtime
 
