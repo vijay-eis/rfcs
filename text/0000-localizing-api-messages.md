@@ -53,9 +53,9 @@ messages in the API response depending on the language preference set in the req
 
 ## Detailed Explanation/Design
 #### API Protocol
-* accept-language header value MUST be in ll-CC format. , where ll is a two-letter language code,
-  and CC is a two-letter country code. Refer to [IETF Language Tag standard](https://en.wikipedia.org/wiki/IETF_language_tag)
-  for additional details
+* **accept-language** header value MUST be in languageCode-regionCode format, -regionCode is an optional part of the value.
+  * **languageCode** is a two-letter language code from [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) (2002) or a three-letter code from [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) (1998), [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) (2007) or ISO 639-5 (2008), or registered through the BCP 47 process and composed of five to eight letters;
+  * **regionCode** is a two-letter country code from [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (written in upper case), or a three-digit code from [UN M.49](https://en.wikipedia.org/wiki/UN_M49) for geographical regions.
 * A module MUST return messages in the language specified in the HTTP "Accept-language" request header
   (see IETF RFC 7231 section 5.3.5).  If the requested language is not available, a module
   MUST return the message in the en language.
