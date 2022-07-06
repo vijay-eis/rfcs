@@ -18,7 +18,7 @@
 # Localizing API (Backend) Messages
 
 ## Summary
-  The purpose of this RFC is to define an approach that allows API developer to provide
+The purpose of this RFC is to define an approach that allows API developer to provide
 messages in the API response depending on the language preference set in the request. 
 
 
