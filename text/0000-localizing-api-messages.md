@@ -3,10 +3,10 @@
 * RFC PR: 
   * Preliminary Review: https://github.com/folio-org/rfcs/pull/3
   * Draft Review : https://github.com/folio-org/rfcs/pull/3
-  * Public Review :
-  * Final Review :
+  * Public Review : https://github.com/folio-org/rfcs/pull/3
+  * Final Review : https://github.com/folio-org/rfcs/pull/3
 * FOLIO Issue:
-* Current Status: :no_entry_sign: DRAFT REVIEW :no_entry_sign:
+* Current Status: :no_entry_sign: FINAL REVIEW :no_entry_sign:
 * Submitter : Radhakrishnan Gopalakrishnan (rgopalakrishnan@ebsco.com)
 * Co-Submitter(s) : Zak Burke (zburke@ebsco.com)
 * Sub Group : 
