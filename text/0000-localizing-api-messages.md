@@ -34,7 +34,7 @@ messages in the API response depending on the language preference set in the req
 * Message Key - Refers to the string that is used in place of a hardcoded message in the code
 * Message Value - Refers to the string that is fetched using a message key lookup for a given locale
 * Translation file - Contains Message key and values for a given locale
-* Static Messages - Refers to the messages values stored in the translation file
+* Static (design / compile time) Messages - Message values that are defined during development and do not vary by deployment environment
 * Dynamic Messages - Messages stored in the database that requires translation. A.k.a Runtime messages
 * Message Format - Refers to the standard used for formatting the message values in the translation file
 
